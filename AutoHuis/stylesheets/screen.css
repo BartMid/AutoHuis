@@ -1,0 +1,942 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+body,
+html {
+  margin: 0;
+  padding: 0; }
+
+body {
+  overflow-x: hidden; }
+
+.hamburger-nav {
+  display: none; }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .hamburger-nav {
+      display: block;
+      z-index: 100;
+      position: fixed;
+      width: 100%;
+      margin: 5px; }
+      .hamburger-nav label {
+        cursor: pointer;
+        font-size: 50px;
+        margin-left: 5px;
+        color: black; }
+      .hamburger-nav input {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute; }
+      .hamburger-nav input:not(:checked) ~ nav {
+        display: none; }
+      .hamburger-nav nav {
+        margin-top: -16%;
+        margin-left: -5px;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+      .hamburger-nav ul {
+        list-style-type: none;
+        padding: 65px 0 50px 0; }
+      .hamburger-nav li a {
+        font-size: 24px;
+        text-decoration: none;
+        color: black;
+        font-family: 'Lato', sans-serif; }
+      .hamburger-nav li {
+        border-bottom: 1px solid rgba(150, 150, 150, 0.7);
+        width: 80%;
+        margin-left: 10%;
+        line-height: 2.2; }
+        .hamburger-nav li:last-child {
+          border-bottom: none; } }
+
+.header_nav {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+  opacity: 1; }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .header_nav {
+      display: none; } }
+  .header_nav .header_nav-content {
+    margin-left: 7.5%;
+    margin-top: 2.5%;
+    max-width: 1280px; }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .header_nav .header_nav-content {
+        margin: auto; } }
+  .header_nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    height: auto;
+    width: 100%;
+    max-width: 1280px; }
+  .header_nav li {
+    float: left;
+    margin-left: 9%;
+    margin-top: 3.5%; }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .header_nav li {
+        margin-top: 4.2%;
+        margin-left: 11%; } }
+  .header_nav li a {
+    display: block;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5vw; }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .header_nav li a {
+        font-size: 20px; } }
+  .header_nav li::after {
+    content: '';
+    display: block;
+    width: 0;
+    border-bottom: 3px solid black;
+    transition: width 0.3s; }
+  .header_nav li:hover::after {
+    width: 100%; }
+  .header_nav .active:after {
+    display: none; }
+  .header_nav li .active {
+    border-bottom: 3px solid black; }
+    .header_nav li .active:hover {
+      border: 0; }
+  .header_nav img {
+    width: 10%;
+    margin-top: -5px;
+    float: left;
+    margin-left: 10%;
+    padding-bottom: 1%; }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .header_nav img {
+        width: 110px;
+        margin-top: 3px; } }
+
+.banner {
+  z-index: 5;
+  position: relative; }
+  @media (min-width: 1280px) and (max-width: 50000px) {
+    .banner {
+      max-width: 1280px;
+      margin: auto; } }
+  .banner img {
+    width: 100%;
+    margin-top: -5%; }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .banner img {
+        margin-top: -10%; } }
+
+.homecontainer {
+  position: relative;
+  max-width: 1280px;
+  margin-top: -15.5%; }
+  @media (min-width: 1280px) and (max-width: 50000px) {
+    .homecontainer {
+      margin: auto; } }
+
+.container {
+  max-width: 1280px;
+  margin: auto; }
+
+.content {
+  width: 100%; }
+
+.content1 {
+  z-index: 4;
+  width: 100%;
+  height: 45vw;
+  margin-top: -15.5%;
+  background-color: #f1f1f1;
+  -webkit-clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 17%);
+  clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 17%); }
+  @media (min-width: 1280px) and (max-width: 50000px) {
+    .content1 {
+      margin-top: -205px;
+      height: 600px;
+      clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 18%); } }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .content1 {
+      height: 165vw;
+      margin-top: -17%;
+      -webkit-clip-path: none;
+      clip-path: none; } }
+  .content1 #slideshow {
+    position: relative; }
+    .content1 #slideshow img {
+      width: 40vw;
+      -webkit-clip-path: polygon(0 11%, 100% 0, 100% 100%, 0 90%, 0 90%, 0 11%);
+      clip-path: polygon(0 11%, 100% 0, 100% 100%, 0 90%, 0 90%, 0 11%); }
+      @media (min-width: 1280px) and (max-width: 50000px) {
+        .content1 #slideshow img {
+          width: 512px; } }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .content1 #slideshow img {
+          width: 95%;
+          margin-left: 1%; } }
+  .content1 #slideshow > div {
+    position: absolute;
+    margin-left: 3%;
+    margin-top: 7%; }
+  .content1 .content-text {
+    width: 40%;
+    margin-right: 7.5%;
+    float: right;
+    margin-top: 7.5%; }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .content1 .content-text {
+        position: relative;
+        float: left;
+        margin-right: 0;
+        margin-top: 70%;
+        width: 90%;
+        padding: 5%; } }
+    .content1 .content-text h1 {
+      font-size: 4.5vw;
+      letter-spacing: 2px;
+      font-weight: lighter;
+      text-align: center;
+      padding: 25px 0;
+      font-family: 'Montserrat', sans-serif; }
+      @media (min-width: 1280px) and (max-width: 50000px) {
+        .content1 .content-text h1 {
+          font-size: 60px; } }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .content1 .content-text h1 {
+          font-size: 9vw;
+          padding: 25px 0 10px 0; } }
+    .content1 .content-text p {
+      font-size: 1.3vw;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      padding: 20px 0;
+      line-height: 1.3; }
+      @media (min-width: 1280px) and (max-width: 50000px) {
+        .content1 .content-text p {
+          font-size: 17px; } }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .content1 .content-text p {
+          font-size: 4vw;
+          padding: 10px 0; } }
+
+.content2 {
+  width: 100%;
+  height: 45vw;
+  background-color: #e6e6e6;
+  margin-top: -9%;
+  -webkit-clip-path: polygon(100% 17%, 100% 17%, 100% 20%, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 0);
+  clip-path: polygon(100% 17%, 100% 17%, 100% 20%, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 0); }
+  @media (min-width: 1280px) and (max-width: 50000px) {
+    .content2 {
+      height: 600px;
+      margin-top: -11%;
+      clip-path: polygon(100% 18%, 100% 18%, 100% 20%, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 0); } }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .content2 {
+      height: 165vw;
+      clip-path: polygon(100% 5%, 100% 18%, 100% 20%, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 0);
+      -webkit-clip-path: polygon(100% 5%, 100% 18%, 100% 20%, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 0); } }
+  .content2 img {
+    width: 40vw;
+    -webkit-clip-path: polygon(0 0, 100% 11%, 100% 89%, 0 100%, 0 100%, 0 0);
+    clip-path: polygon(0 0, 100% 11%, 100% 89%, 0 100%, 0 100%, 0 0);
+    margin-left: 9%;
+    margin-top: 7%; }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .content2 img {
+        width: 512px; } }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .content2 img {
+        width: 92%;
+        margin-left: 4%; } }
+  .content2 .content-text {
+    width: 40%;
+    margin-left: 7.5%;
+    float: left;
+    margin-top: 7.5%; }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .content2 .content-text {
+        position: relative;
+        margin-left: 0;
+        margin-top: -4%;
+        width: 90%;
+        padding: 5%; } }
+    .content2 .content-text h2 {
+      font-size: 4.5vw;
+      letter-spacing: 2px;
+      font-weight: lighter;
+      text-align: center;
+      padding: 25px 0;
+      font-family: 'Montserrat', sans-serif; }
+      @media (min-width: 1280px) and (max-width: 50000px) {
+        .content2 .content-text h2 {
+          font-size: 60px; } }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .content2 .content-text h2 {
+          font-size: 9vw;
+          padding: 25px 0 10px 0; } }
+    .content2 .content-text p {
+      font-size: 1.3vw;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      padding: 20px 0;
+      line-height: 1.3; }
+      @media (min-width: 1280px) and (max-width: 50000px) {
+        .content2 .content-text p {
+          font-size: 17px; } }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .content2 .content-text p {
+          font-size: 4vw;
+          padding: 10px 0; } }
+  .content2 button {
+    float: left; }
+
+.content3 {
+  width: 100%;
+  height: 45vw;
+  margin-top: -9%;
+  background-color: #d9d9d9;
+  -webkit-clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 17%);
+  clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 17%); }
+  @media (min-width: 1280px) and (max-width: 50000px) {
+    .content3 {
+      height: 600px;
+      margin-top: -11%; } }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .content3 {
+      height: 165vw;
+      clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 5%);
+      -webkit-clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%, 0 5%); } }
+  .content3 img {
+    width: 40vw;
+    -webkit-clip-path: polygon(0 11%, 100% 0, 100% 100%, 0 90%, 0 90%, 0 11%);
+    clip-path: polygon(0 11%, 100% 0, 100% 100%, 0 90%, 0 90%, 0 11%);
+    margin-left: 3%;
+    margin-top: 7%; }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .content3 img {
+        width: 512px; } }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .content3 img {
+        width: 92%;
+        margin-left: 4%; } }
+  .content3 .content-text {
+    width: 40%;
+    margin-right: 7.5%;
+    float: right;
+    margin-top: 7.5%; }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .content3 .content-text {
+        position: relative;
+        float: left;
+        margin-right: 0;
+        margin-top: -4%;
+        width: 90%;
+        padding: 5%; } }
+    .content3 .content-text h3 {
+      font-size: 4.5vw;
+      letter-spacing: 2px;
+      font-weight: lighter;
+      text-align: center;
+      padding: 25px 0;
+      font-family: 'Montserrat', sans-serif; }
+      @media (min-width: 1280px) and (max-width: 50000px) {
+        .content3 .content-text h3 {
+          font-size: 60px; } }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .content3 .content-text h3 {
+          font-size: 9vw;
+          padding: 25px 0 10px 0; } }
+    .content3 .content-text p {
+      font-size: 1.3vw;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      padding: 20px 0;
+      line-height: 1.3; }
+      @media (min-width: 1280px) and (max-width: 50000px) {
+        .content3 .content-text p {
+          font-size: 17px; } }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .content3 .content-text p {
+          font-size: 4vw;
+          padding: 10px 0; } }
+
+.occasions .car_title {
+  float: left;
+  width: 100%;
+  margin-top: -4%;
+  padding-bottom: 5%; }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .occasions .car_title {
+      margin-top: -3%; } }
+  .occasions .car_title h1 {
+    font-size: 7vw;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter; }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .occasions .car_title h1 {
+        font-size: 90px; } }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .occasions .car_title h1 {
+        font-size: 11vw; } }
+.occasions .sorteren {
+  width: 22.5%;
+  float: left;
+  margin: 0.5% 0 0 5%;
+  height: auto;
+  background: whitesmoke; }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .occasions .sorteren {
+      width: 90%; } }
+  .occasions .sorteren .sorteer {
+    width: 100%;
+    margin: 10%; }
+    .occasions .sorteren .sorteer:after {
+      content: '';
+      display: block;
+      margin-left: -5%;
+      margin-top: 5%;
+      width: 90%;
+      height: 1px;
+      background-color: grey;
+      opacity: 0.5; }
+    .occasions .sorteren .sorteer select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      appearance: none;
+      outline: 0;
+      border: 0 !important;
+      box-shadow: none;
+      background: white;
+      background-image: none;
+      color: black;
+      font-size: 12px;
+      font-family: 'Lato', sans-serif;
+      font-weight: lighter; }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .occasions .sorteren .sorteer select {
+          font-size: 4vw; } }
+    .occasions .sorteren .sorteer .select {
+      position: relative;
+      display: block;
+      margin-left: 5%;
+      width: 70%;
+      height: 2em;
+      margin-top: 2%;
+      line-height: 1;
+      background: white;
+      overflow: hidden;
+      border-radius: .25em; }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .occasions .sorteren .sorteer .select {
+          width: 75%;
+          margin-top: 3%;
+          margin-left: 2.5%; } }
+    .occasions .sorteren .sorteer select {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0 0 0 .5em;
+      cursor: pointer; }
+    .occasions .sorteren .sorteer select::-ms-expand {
+      display: none; }
+    .occasions .sorteren .sorteer .select::after {
+      content: '\25BC';
+      position: absolute;
+      top: 0;
+      line-height: 2;
+      right: 0;
+      bottom: 0;
+      padding: 0 1em;
+      background: #949494;
+      pointer-events: none; }
+    .occasions .sorteren .sorteer .select:hover::after {
+      color: #f39c12; }
+    .occasions .sorteren .sorteer .select::after {
+      -webkit-transition: .25s all ease;
+      -o-transition: .25s all ease;
+      transition: .25s all ease; }
+    .occasions .sorteren .sorteer input[type=submit] {
+      width: 25%; }
+  .occasions .sorteren .filter {
+    padding: 3% 0 3% 5%;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter; }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .occasions .sorteren .filter {
+        padding: 3% 0 3% 5%;
+        width: 45%;
+        height: 40vw;
+        float: left; } }
+    .occasions .sorteren .filter h2 {
+      font-weight: normal;
+      padding-bottom: 1%; }
+.occasions .post_field {
+  width: 60%;
+  float: left;
+  margin-left: 5%;
+  margin-bottom: 10%; }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .occasions .post_field {
+      width: 90%;
+      margin-top: 10%; } }
+  .occasions .post_field .auto {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden; }
+    .occasions .post_field .auto:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4)); }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .occasions .post_field .auto {
+        filter: none;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.22);
+        margin-top: 10%; } }
+    .occasions .post_field .auto .auto_post {
+      background: whitesmoke;
+      width: 100%;
+      float: left;
+      height: auto;
+      margin-top: 1%; }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .occasions .post_field .auto .auto_post {
+          margin-top: 0; } }
+      .occasions .post_field .auto .auto_post h1 {
+        color: black;
+        font-family: 'Lato', sans-serif;
+        font-weight: lighter;
+        font-size: 1.8vw;
+        margin-top: 3%;
+        text-align: center; }
+        @media (min-width: 1280px) and (max-width: 50000px) {
+          .occasions .post_field .auto .auto_post h1 {
+            font-size: 24px; } }
+        @media (min-width: 0px) and (max-width: 500px) {
+          .occasions .post_field .auto .auto_post h1 {
+            font-size: 4.5vw;
+            width: 90%;
+            display: inline-block;
+            padding: 2% 5% 0 5%; } }
+      .occasions .post_field .auto .auto_post p {
+        text-align: center;
+        font-size: 3vw;
+        font-family: 'Lato', sans-serif;
+        font-weight: lighter;
+        padding: 4% 10% 0 0;
+        float: right; }
+        @media (min-width: 1280px) and (max-width: 50000px) {
+          .occasions .post_field .auto .auto_post p {
+            font-size: 40px; } }
+        @media (min-width: 0px) and (max-width: 500px) {
+          .occasions .post_field .auto .auto_post p {
+            padding: 6% 0% 10% 5%;
+            font-size: 6vw;
+            float: left; } }
+      .occasions .post_field .auto .auto_post img {
+        width: 30%;
+        height: 11.5vw;
+        float: left; }
+        @media (min-width: 0px) and (max-width: 500px) {
+          .occasions .post_field .auto .auto_post img {
+            width: 100%;
+            height: auto; } }
+        @media (min-width: 1280px) and (max-width: 50000px) {
+          .occasions .post_field .auto .auto_post img {
+            height: 150px; } }
+    .occasions .post_field .auto:nth-child(odd) .auto_post {
+      -webkit-clip-path: polygon(0 0, 97% 0, 100% 100%, 0% 100%);
+      clip-path: polygon(0 0, 97% 0, 100% 100%, 0% 100%); }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .occasions .post_field .auto:nth-child(odd) .auto_post {
+          -webkit-clip-path: none;
+          clip-path: none; } }
+    .occasions .post_field .auto:nth-child(even) .auto_post {
+      -webkit-clip-path: polygon(0% 0, 100% 0, 97% 100%, 0% 100%);
+      clip-path: polygon(0% 0, 100% 0, 97% 100%, 0% 100%); }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .occasions .post_field .auto:nth-child(even) .auto_post {
+          -webkit-clip-path: none;
+          clip-path: none; } }
+
+.contact h1 {
+  font-size: 7vw;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  margin-top: -5%; }
+  @media (min-width: 1280px) and (max-width: 50000px) {
+    .contact h1 {
+      font-size: 90px; } }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .contact h1 {
+      font-size: 11vw; } }
+.contact iframe {
+  float: left;
+  width: 60%;
+  height: 40vw;
+  margin: 5%;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.22); }
+  @media (min-width: 1280px) and (max-width: 50000px) {
+    .contact iframe {
+      height: 450px; } }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .contact iframe {
+      width: 90%;
+      height: 70vw; } }
+.contact .info {
+  margin-top: 5%;
+  width: 25%;
+  height: 40vw;
+  float: left;
+  background: whitesmoke; }
+  @media (min-width: 1280px) and (max-width: 50000px) {
+    .contact .info {
+      height: 450px; } }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .contact .info {
+      width: 90%;
+      margin-left: 5%;
+      height: auto;
+      margin-bottom: 10%; } }
+  .contact .info h2 {
+    font-size: 2vw;
+    padding: 15% 0 5% 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    text-align: center; }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .contact .info h2 {
+        font-size: 27px; } }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .contact .info h2 {
+        font-size: 7vw;
+        padding: 8% 0 5% 0; } }
+  .contact .info p {
+    font-size: 1.7vw;
+    padding: 5% 0%;
+    line-height: 1.3;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    text-align: center; }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .contact .info p {
+        font-size: 18px;
+        padding: 2% 0; } }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .contact .info p {
+        font-size: 6vw;
+        text-align: left;
+        padding: 2% 0 0% 10%; } }
+  .contact .info img {
+    width: 60%;
+    border-radius: 50%;
+    margin-left: 20%;
+    margin-top: 10%; }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .contact .info img {
+        margin-bottom: 7%; } }
+
+.verkopen h1 {
+  font-size: 7vw;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
+  margin-top: -5%; }
+  @media (min-width: 1280px) and (max-width: 50000px) {
+    .verkopen h1 {
+      font-size: 90px; } }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .verkopen h1 {
+      font-size: 11vw; } }
+.verkopen .verkopen-text {
+  width: 35%;
+  margin-left: 8.5%;
+  margin-top: 5%;
+  background: whitesmoke;
+  padding: 2%;
+  float: left; }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .verkopen .verkopen-text {
+      width: 86%;
+      margin-left: 5%; } }
+  .verkopen .verkopen-text:nth-child(3) {
+    margin-left: 5%; }
+  .verkopen .verkopen-text h2 {
+    font-size: 3vw;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter; }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .verkopen .verkopen-text h2 {
+        font-size: 38px; } }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .verkopen .verkopen-text h2 {
+        font-size: 6vw;
+        padding-top: 2%; } }
+  .verkopen .verkopen-text p {
+    font-size: 1.5vw;
+    margin-top: 3%;
+    line-height: 1.2;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter; }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .verkopen .verkopen-text p {
+        font-size: 19px; } }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .verkopen .verkopen-text p {
+        font-size: 4vw;
+        padding: 0 4% 3% 4%; } }
+.verkopen .verkopen_form {
+  display: inline-block;
+  width: 83%;
+  margin-left: 8.5%;
+  background: whitesmoke;
+  margin-top: 5%;
+  padding-bottom: 5%;
+  margin-bottom: 2%; }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .verkopen .verkopen_form {
+      margin-left: 5%;
+      width: 90%; } }
+  .verkopen .verkopen_form h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    font-size: 3vw;
+    text-align: center;
+    margin-top: 4%;
+    padding-bottom: 2%; }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .verkopen .verkopen_form h1 {
+        font-size: 38px; } }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .verkopen .verkopen_form h1 {
+        font-size: 5vw;
+        padding: 2% 0 2% 0; } }
+  .verkopen .verkopen_form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    border: 0 !important;
+    box-shadow: none;
+    background: white;
+    background-image: none;
+    color: black;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter; }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .verkopen .verkopen_form select {
+        font-size: 4vw; } }
+  .verkopen .verkopen_form .select {
+    position: relative;
+    display: block;
+    margin-left: 25%;
+    width: 50%;
+    height: 3em;
+    margin-top: 2%;
+    line-height: 3;
+    background: white;
+    overflow: hidden;
+    border-radius: .25em; }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .verkopen .verkopen_form .select {
+        width: 75%;
+        margin-top: 3%;
+        margin-left: 12.5%; } }
+  .verkopen .verkopen_form select {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0 0 0 .5em;
+    cursor: pointer; }
+  .verkopen .verkopen_form select::-ms-expand {
+    display: none; }
+  .verkopen .verkopen_form .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 1em;
+    background: #949494;
+    pointer-events: none; }
+  .verkopen .verkopen_form .select:hover::after {
+    color: #f39c12; }
+  .verkopen .verkopen_form .select::after {
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease; }
+  .verkopen .verkopen_form .verkopen_button {
+    width: 20%;
+    margin-top: 5%;
+    margin-left: 40%;
+    height: 2vw;
+    background-color: #949494;
+    border-radius: .25em; }
+    .verkopen .verkopen_form .verkopen_button:hover {
+      cursor: pointer;
+      transform: scale(1.01); }
+    @media (min-width: 1280px) and (max-width: 50000px) {
+      .verkopen .verkopen_form .verkopen_button {
+        height: 30px; } }
+    @media (min-width: 0px) and (max-width: 500px) {
+      .verkopen .verkopen_form .verkopen_button {
+        width: 40%;
+        margin-left: 30%;
+        height: 10vw; } }
+    .verkopen .verkopen_form .verkopen_button p {
+      color: white;
+      font-size: 1.5vw;
+      font-family: 'Lato', sans-serif;
+      font-weight: lighter;
+      text-align: center;
+      line-height: 1.4; }
+      @media (min-width: 1280px) and (max-width: 50000px) {
+        .verkopen .verkopen_form .verkopen_button p {
+          font-size: 20px; } }
+      @media (min-width: 0px) and (max-width: 500px) {
+        .verkopen .verkopen_form .verkopen_button p {
+          font-size: 5vw;
+          line-height: 1.8; } }
+
+button {
+  background: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  color: black;
+  display: block;
+  font-size: 13px;
+  float: right;
+  font-weight: 500;
+  margin-top: 15px;
+  padding: 4px 13px;
+  position: relative;
+  transition: all 0.5s ease-in-out; }
+
+button::after,
+button::before {
+  background: black;
+  content: '';
+  position: absolute;
+  z-index: -1; }
+
+button:hover {
+  color: white; }
+
+.auto_button {
+  overflow: hidden; }
+  @media (min-width: 500px) and (max-width: 920px) {
+    .auto_button {
+      display: none; } }
+
+.auto_button::after {
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(50deg);
+  transition-duration: 0.7s;
+  transform-origin: top left;
+  width: 0; }
+
+.auto_button:hover:after {
+  height: 100%;
+  width: 135%; }
+
+footer {
+  background-color: #5b5b5d;
+  height: 150px;
+  width: 100%;
+  display: inline-block; }
+  footer .footer-content {
+    max-width: 1280px;
+    margin: auto; }
+    @media (min-width: 0px) and (max-width: 500px) {
+      footer .footer-content {
+        margin-left: 10%; } }
+    footer .footer-content .footer-made {
+      color: white;
+      font-family: 'Lato', sans-serif;
+      font-weight: lighter;
+      float: right;
+      margin-right: 25px;
+      margin-top: 65px; }
+      @media (min-width: 0px) and (max-width: 500px) {
+        footer .footer-content .footer-made {
+          margin-top: 20px;
+          margin-left: 12.5%;
+          float: left;
+          font-size: 4vw; } }
+    footer .footer-content p a {
+      text-decoration: none;
+      color: white;
+      font-family: 'Lato', sans-serif;
+      font-weight: lighter;
+      float: left;
+      padding: 25px;
+      margin-top: 40px; }
+      @media (min-width: 0px) and (max-width: 500px) {
+        footer .footer-content p a {
+          margin-top: 40px;
+          padding: 1.5%;
+          font-size: 4vw; } }
